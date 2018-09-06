@@ -10,7 +10,7 @@
 
 //Global variable
 var httpRequest = false;
-var entry = "^IXIC";
+var entry = "MSFT";
 
 //Function to Create XHR Object
 function getRequestObject() {
@@ -40,6 +40,9 @@ function getQuote() {
     //alert("getQuote()");
     if (document.getElementsByTagName("input")[0].value) {
         entry = document.getElementsByTagName("input")[0].value;
+    }
+    else {
+        document.getElementsByTagName("input")[0].value = entry;
     }
     if (!httpRequest) {
         httpRequest = getRequestObject();
